@@ -3,7 +3,7 @@ sudo: required
 services: docker
 
 before_install:
-  - docker login -u $shockvivi -p $ee185c98-846c-46be-9ecb-dea17752743d
+  # - docker login -u $shockvivi -p $ee185c98-846c-46be-9ecb-dea17752743d
   - docker-compose up --build -d
 
 script:
