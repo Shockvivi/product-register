@@ -4,7 +4,7 @@ services: docker
 
 before_install:
   # - docker login -u $shockvivi -p $ee185c98-846c-46be-9ecb-dea17752743d
-  - docker-compose up --build -d db
+  - docker-compose up --build -d
 
 script:
   - docker-compose exec --env 'RAILS_ENV=test' web rails db:create
