@@ -8,12 +8,10 @@ before_install:
   - docker login -u "$HEROKU_USERNAME" -p "$HEROKU_API_KEY" registry.heroku.com
 
 script:
-  # - docker-compose exec --env 'RAILS_ENV=test' web bash rails db:create
-  # - docker-compose exec --env 'RAILS_ENV=test' web bash rails db:migrate
-  # - docker-compose exec --env 'RAILS_ENV=test' web bash rails test
-  - docker-compose exec web bash rails db:create
-  - docker-compose exec web bash rails db:migrate
-  - docker-compose exec web bash rails test
+  - docker-compose exec --env 'RAILS_ENV=test' web bash rails db:create
+  - docker-compose exec --env 'RAILS_ENV=test' web bash rails db:migrate
+  - docker-compose exec --env 'RAILS_ENV=test' web bash rails test
+
 deploy:
   provider: script
   script:
